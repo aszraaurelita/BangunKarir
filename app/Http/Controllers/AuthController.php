@@ -107,14 +107,15 @@ class AuthController extends Controller
     private function redirectBasedOnProfile()
     {
         $user = Auth::user();
-
+        
+        // Jika profil belum ada atau belum lengkap, ke setup
         if (!$user->profile || !$user->profile->is_complete) {
             return redirect()->route('profile.setup');
         }
-
-        return redirect()->route('beranda');
+        
+        // Jika profil sudah lengkap, ke halaman profil
+        return redirect()->route('profile.show');
     }
-
 
 
 }
