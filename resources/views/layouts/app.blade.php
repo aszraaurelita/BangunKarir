@@ -79,43 +79,47 @@
 </head>
 <body>
    {{-- layouts/app.blade.php --}}
-<body>
-    @if (Request::is('/'))
-        {{-- Navbar Khusus Landing Page --}}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid px-4">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="fas fa-briefcase me-2"></i>RuangKarir
-                </a>
-                <div class="ms-auto">
-                    <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Masuk</a>
-                    <a href="{{ route('register') }}" class="btn btn-light">Daftar</a>
+        @php
+        $isLanding = Request::is('/');
+        $isLoginOrRegister = Request::routeIs('login') || Request::routeIs('register');
+        $isBeranda = Request::routeIs('beranda');
+        $isProfil = Request::routeIs('profile.show');
+    @endphp
+
+    <nav class="navbar navbar-expand-lg navbar-dark {{ $isLanding ? 'bg-dark' : '' }}" style="background: linear-gradient(135deg, var(--primary-orange), var(--primary-red));">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <i class="fas fa-briefcase me-2"></i>BangunKarir
+            </a>
+
+            {{-- Landing Page --}}
+            @if ($isLanding)
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#fitur">Fitur</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Masuk</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-light text-dark ms-2" href="{{ route('register') }}">Daftar</a></li>
+                    </ul>
                 </div>
-            </div>
-        </nav>
-    @else
-        {{-- Navbar Default untuk halaman lain --}}
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid px-4 ">
-                <a class="navbar-brand" href="{{ route('profile.show') }}">
-                    <i class="fas fa-briefcase me-2"></i>RuangKarir
-                </a>
+
+            {{-- Login & Register --}}
+            @elseif ($isLoginOrRegister)
+                {{-- Hanya Logo Saja --}}
+
+            {{-- Halaman Beranda --}}
+            @elseif ($isBeranda)
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('beranda') ? 'active' : '' }}" href="{{ route('beranda') }}">
-                            <i class="bi bi-house me-1"></i> Beranda
-                        </a>
-                    </li>
-                    {{-- Dropdown user --}}
+                    <li class="nav-item"><a class="nav-link" href="{{ route('beranda') }}"><i class="bi bi-house me-1"></i>Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#postingan"><i class="bi bi-chat-dots me-1"></i>Postingan</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            {{ optional(Auth::user())->name }}
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('profile.show') }}">Profil Saya</a></li>
-                            @unless (request()->routeIs('beranda'))
-                                <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profil</a></li>
-                            @endunless
                             <li><hr class="dropdown-divider"></li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
@@ -126,9 +130,29 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
-        </nav>
-    @endif
+
+            {{-- Halaman Profil --}}
+            @elseif ($isProfil)
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('beranda') }}"><i class="bi bi-house me-1"></i>Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Edit Profil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            @endif
+        </div>
+    </nav>
+
 
     <main class="py-4">
         @yield('content')
