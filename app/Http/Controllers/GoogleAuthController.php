@@ -89,18 +89,15 @@ class GoogleAuthController extends Controller
     private function redirectBasedOnProfile()
     {
         $user = Auth::user();
-        
-        // Eager load profile untuk menghindari N+1 query
+
         $profile = Profile::where('user_id', $user->id)->first();
 
-        
-        // Jika profil belum ada atau belum lengkap
         if (!$user->profile || !$user->profile->is_complete) {
             return redirect()->route('profile.setup')->with('success', 'Berhasil login dengan Google! Silakan lengkapi profil Anda.');
         }
-        
-        // Jika profil sudah lengkap
-        return redirect()->route('profile.show')->with('success', 'Berhasil login dengan Google!');
+
+        return redirect()->route('beranda')->with('success', 'Berhasil login dengan Google!');
     }
+
 
 }
