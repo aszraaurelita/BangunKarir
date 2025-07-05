@@ -81,7 +81,7 @@
 <div class="min-h-screen bg-white">
     {{-- Navigation --}}
     <nav class="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div class="container-fluid px-4 py-2 flex items-center justify-between">
+        <div class="container-fluid px-8 py-5 flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-2">
                 <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
@@ -175,6 +175,18 @@
         </div>
     </section>
 
+    {{-- About Section --}}
+    <section id="tentang" class="py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Tentang BangunKarir</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    BangunKarir adalah platform inovatif yang dirancang khusus untuk mahasiswa UISI. Kami berkomitmen untuk membantu mahasiswa dalam membangun personal branding yang kuat, mengakses peluang karier yang relevan, dan terhubung dengan perusahaan-perusahaan terkemuka. Dengan fitur-fitur canggih dan dukungan dari mentor berpengalaman, kami siap membantu mahasiswa mencapai impian karier mereka.
+                </p>
+            </div>
+        </div>
+    </section>
+    
     {{-- Why Choose Us --}}
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -347,10 +359,10 @@
                 <p class="text-xl text-gray-600">Dengar langsung dari mahasiswa yang telah merasakan keajaiban BangunKarir</p>
             </div>
 
-            <div class="relative overflow-hidden">
+            <div class="relative overflow-x-auto scrollbar-hide -mx-4 px-4">
                 <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
                     {{-- Testimonial 1 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -369,7 +381,7 @@
                     </div>
 
                     {{-- Testimonial 2 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -388,7 +400,7 @@
                     </div>
 
                     {{-- Testimonial 3 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -407,7 +419,7 @@
                     </div>
 
                     {{-- Testimonial 4 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -426,7 +438,7 @@
                     </div>
 
                     {{-- Testimonial 5 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -445,7 +457,7 @@
                     </div>
 
                     {{-- Testimonial 6 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -464,7 +476,7 @@
                     </div>
 
                     {{-- Testimonial 7 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -483,7 +495,7 @@
                     </div>
 
                     {{-- Testimonial 8 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -502,7 +514,7 @@
                     </div>
 
                     {{-- Testimonial 9 --}}
-                    <div class="w-full md:w-1/3 flex-shrink-0 px-4">
+                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -524,17 +536,7 @@
         </div>
     </section>
 
-    {{-- About Section --}}
-    <section id="tentang" class="py-20 bg-white scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Tentang BangunKarir</h2>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                    BangunKarir adalah platform inovatif yang dirancang khusus untuk mahasiswa UISI. Kami berkomitmen untuk membantu mahasiswa dalam membangun personal branding yang kuat, mengakses peluang karier yang relevan, dan terhubung dengan perusahaan-perusahaan terkemuka. Dengan fitur-fitur canggih dan dukungan dari mentor berpengalaman, kami siap membantu mahasiswa mencapai impian karier mereka.
-                </p>
-            </div>
-        </div>
-    </section>
+    
 
     {{-- Footer --}}
     <footer class="bg-gray-800 text-white py-10">
@@ -560,9 +562,11 @@
     </footer>
 </div>
     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            const menu = document.getElementById("mobile-menu");
-            menu.classList.toggle("hidden");
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("menu-toggle").addEventListener("click", function () {
+                const menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+            });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
