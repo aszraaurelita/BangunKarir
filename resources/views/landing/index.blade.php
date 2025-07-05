@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'RuangKarir - UISI')</title>
+    <title>@yield('title', 'BangunKarir - UISI')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -93,15 +93,16 @@
                     </span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="#tentang" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
+                        Tentang
+                    </a>
                     <a href="#fitur" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
                         Fitur
                     </a>
                     <a href="#testimoni" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
                         Testimoni
                     </a>
-                    <a href="#tentang" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                        Tentang
-                    </a>
+                    
                     <a href="{{ route('login') }}" class="text-red-600 hover:text-red-700 transition-colors font-medium">
                         Masuk
                     </a>
@@ -110,9 +111,10 @@
                     </a>
                 </div>
                 {{-- Mobile menu button --}}
-                <button class="md:hidden text-gray-600" onclick="toggleMobileMenu()">
+                <button class="navbar-toggler md:hidden text-gray-600" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+
             </div>
             {{-- Mobile menu --}}
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
