@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
