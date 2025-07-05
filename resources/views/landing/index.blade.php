@@ -81,7 +81,7 @@
 <div class="min-h-screen bg-white">
     {{-- Navigation --}}
     <nav class="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div class="container-fluid px-8 py-5 flex items-center justify-between">
+        <div class="container-fluid px-6 py-4 flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center space-x-2">
                 <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
@@ -186,7 +186,7 @@
             </div>
         </div>
     </section>
-    
+
     {{-- Why Choose Us --}}
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
