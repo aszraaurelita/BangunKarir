@@ -81,56 +81,47 @@
 <div class="min-h-screen bg-white">
     {{-- Navigation --}}
     <nav class="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div class="container-fluid px-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-briefcase text-white text-sm"></i>
-                    </div>
-                    <span class="text-xl font-bold text-gray-900">BangunKarir</span>
-                    <span class="ml-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full font-medium">
-                        UISI
-                    </span>
+        <div class="container-fluid px-4 py-2 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-briefcase text-white text-sm"></i>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#tentang" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                        Tentang
-                    </a>
-                    <a href="#fitur" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                        Fitur
-                    </a>
-                    <a href="#testimoni" class="text-gray-600 hover:text-red-600 transition-colors font-medium">
-                        Testimoni
-                    </a>
-                    
-                    <a href="{{ route('login') }}" class="text-red-600 hover:text-red-700 transition-colors font-medium">
-                        Masuk
-                    </a>
-                    <a href="{{ route('register') }}" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-2 rounded-lg font-medium transition-all">
-                        Daftar Gratis
-                    </a>
-                </div>
-                {{-- Mobile menu button --}}
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <i class="fas fa-bars text-gray-500"></i> <!-- abu-abu medium -->
-                </button>
-
+                <span class="text-xl font-bold text-gray-900">BangunKarir</span>
+                <span class="ml-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full font-medium">UISI</span>
             </div>
-            {{-- Mobile menu --}}
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
-                <div class="flex flex-col space-y-4 pt-4">
-                    <a href="#fitur" class="text-gray-600 hover:text-red-600 font-medium">Fitur</a>
-                    <a href="#testimoni" class="text-gray-600 hover:text-red-600 font-medium">Testimoni</a>
-                    <a href="#tentang" class="text-gray-600 hover:text-red-600 font-medium">Tentang</a>
-                    <a href="{{ route('login') }}" class="text-red-600 hover:text-red-700 font-medium">Masuk</a>
-                    <a href="{{ route('register') }}" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg font-medium text-center">
-                        Daftar Gratis
-                    </a>
-                </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#tentang" class="text-gray-600 hover:text-red-600 font-medium">Tentang</a>
+                <a href="#fitur" class="text-gray-600 hover:text-red-600 font-medium">Fitur</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-red-600 font-medium">Testimoni</a>
+                <a href="{{ route('login') }}" class="text-red-600 hover:text-red-700 font-medium">Masuk</a>
+                <a href="{{ route('register') }}" class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-4 py-2 rounded-lg font-medium transition-all">
+                    Daftar Gratis
+                </a>
+            </div>
+
+            <!-- Hamburger Button (mobile only) -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fas fa-bars text-gray-600 text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <div class="flex flex-col space-y-4 pt-4 border-t border-gray-200">
+                <a href="#tentang" class="text-gray-600 hover:text-red-600 font-medium">Tentang</a>
+                <a href="#fitur" class="text-gray-600 hover:text-red-600 font-medium">Fitur</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-red-600 font-medium">Testimoni</a>
+                <a href="{{ route('login') }}" class="text-red-600 hover:text-red-700 font-medium">Masuk</a>
+                <a href="{{ route('register') }}" class="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg font-medium text-center">Daftar Gratis</a>
             </div>
         </div>
     </nav>
+
 
     {{-- Hero Section --}}
     <section class="pt-24 pb-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
