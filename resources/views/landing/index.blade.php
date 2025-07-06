@@ -402,8 +402,8 @@
                 <p class="text-xl text-gray-600">Dengar langsung dari mahasiswa yang telah merasakan keajaiban BangunKarir</p>
             </div>
 
-            <div class="relative overflow-x-auto scrollbar-hide -mx-4 px-6">
-                <div id="testimonial-slider" class="grid grid-cols-1 md:flex transition-transform duration-500 ease-in-out">
+            <div class="overflow-x-auto">
+                <div class="flex flex-nowrap gap-6 px-2 md:px-6">
                     {{-- Testimonial 1 --}}
                     <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
