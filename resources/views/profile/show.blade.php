@@ -11,7 +11,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-3 text-center position-relative">
                         @if($profile && $profile->photo)
-                            <img src="{{ asset('storage/' . $profile->photo) }}" alt="Profile Photo" class="rounded-circle img-fluid" style="width: 200px; height: 200px; object-fit: cover;">
+                            <img src="{{ asset($profile->photo) }}" alt="Profile Photo" class="rounded-circle img-fluid" style="width: 200px; height: 200px; object-fit: cover;">
                         @else
                             <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto" style="width: 200px; height: 200px;">
                                 <i class="bi bi-person" style="font-size: 4rem; color: #6c757d;"></i>
@@ -1030,11 +1030,11 @@
                     @if ($post->media_path)
                         <div class="mt-3">
                             @if ($post->media_type === 'image')
-                                <img src="{{ asset('storage/' . $post->media_path) }}" class="img-fluid rounded">
+                                <img src="{{ asset($post->media_path) }}" class="img-fluid rounded">
                             
                             @elseif ($post->media_type === 'video')
                                 <video controls class="w-100 rounded">
-                                    <source src="{{ asset('storage/' . $post->media_path) }}">
+                                    <source src="{{ asset($post->media_path) }}">
                                 </video>
                             
                             @elseif ($post->media_type === 'pdf')
@@ -1051,7 +1051,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                             </div>
                                             <div class="modal-body" style="height: 80vh;">
-                                                <iframe src="{{ asset('storage/' . $post->media_path) }}" width="100%" height="100%" style="border: none;"></iframe>
+                                                <iframe src="{{ asset($post->media_path) }}" width="100%" height="100%" style="border: none;"></iframe>
                                             </div>
                                         </div>
                                     </div>

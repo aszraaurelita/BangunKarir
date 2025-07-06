@@ -108,7 +108,7 @@ class ProfileController extends Controller
                     Log::info('Old photo deleted');
                 }
                 
-                $photoPath = $request->file('photo')->store('profile-photos', 'public');
+                $photoPath = $request->file('photo')->store('profile-photos', 'uploads');
                 $profileData['photo'] = $photoPath;
                 Log::info('New photo uploaded', ['path' => $photoPath]);
             }
@@ -146,8 +146,6 @@ class ProfileController extends Controller
         // Ambil semua postingan yang dibuat oleh pengguna
         $posts = Post::with(['user', 'likes', 'comments.user'])->where('user_id', $user->id)->latest()->get();
         return view('profile.show', compact('user', 'profile', 'posts'));
-    
-    
     }
 
     public function edit()
@@ -189,7 +187,7 @@ class ProfileController extends Controller
             }
 
             // Upload new photo
-            $photoPath = $request->file('photo')->store('profile-photos', 'public');
+            $photoPath = $request->file('photo')->store('profile-photos', 'uploads');
             $profile->update(['photo' => $photoPath]);
 
             return back()->with('success', 'Foto profil berhasil diperbarui!');
