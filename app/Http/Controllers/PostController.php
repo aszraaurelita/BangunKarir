@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use App\Models\Post;
 use App\Models\Like;
 use App\Models\Comment; 
@@ -40,15 +41,25 @@ class PostController extends Controller
 
         if ($request->hasFile('media')) {
             $file = $request->file('media');
-            $mediaPath = $file->store('posts', 'public');
+            $filename = 'post-media/' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-            $ext = $file->getClientOriginalExtension();
-            if (in_array($ext, ['jpg', 'jpeg', 'png'])) {
-                $mediaType = 'image';
-            } elseif ($ext === 'mp4') {
-                $mediaType = 'video';
-            } elseif ($ext === 'pdf') {
-                $mediaType = 'pdf';
+            $response = Http::withToken(env('SUPABASE_KEY'))
+                ->attach('file', file_get_contents($file), $filename)
+                ->post(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $filename);
+
+            if ($response->successful()) {
+                $mediaPath = $filename;
+
+                $ext = $file->getClientOriginalExtension();
+                if (in_array($ext, ['jpg', 'jpeg', 'png'])) {
+                    $mediaType = 'image';
+                } elseif ($ext === 'mp4') {
+                    $mediaType = 'video';
+                } elseif ($ext === 'pdf') {
+                    $mediaType = 'pdf';
+                }
+            } else {
+                return back()->withErrors(['error' => 'Gagal upload media ke Supabase: ' . $response->body()]);
             }
         }
 
@@ -71,39 +82,52 @@ class PostController extends Controller
 
     // Update hanya teks
     public function update(Request $request, Post $post)
-{
-    $request->validate([
-        'caption' => 'required|string',
-        'media' => 'nullable|file|mimes:jpg,jpeg,png,mp4,pdf|max:10240', // max 10MB
-    ]);
+    {
+        $request->validate([
+            'caption' => 'required|string',
+            'media' => 'nullable|file|mimes:jpg,jpeg,png,mp4,pdf|max:20480', // max 10MB
+        ]);
 
-    $post->caption = $request->caption;
+        $post->caption = $request->caption;
 
-    if ($request->hasFile('media')) {
-        // Hapus media lama
-        if ($post->media_path && Storage::exists($post->media_path)) {
-            Storage::delete($post->media_path);
+        if ($request->hasFile('media')) {
+            // 1. Hapus media lama dari Supabase
+            if ($post->media_path) {
+                Http::withToken(env('SUPABASE_KEY'))
+                    ->delete(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET'), [
+                        'prefixes' => [$post->media_path],
+                    ]);
+            }
+
+            // 2. Simpan media baru ke Supabase
+            $file = $request->file('media');
+            $filename = 'post-media/' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+            $upload = Http::withToken(env('SUPABASE_KEY'))
+                ->attach('file', file_get_contents($file), $filename)
+                ->post(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $filename);
+
+            if (!$upload->successful()) {
+                return back()->withErrors(['error' => 'Upload ke Supabase gagal: ' . $upload->body()]);
+            }
+
+            $post->media_path = $filename;
+
+            // 3. Deteksi jenis media
+            $mime = $file->getMimeType();
+            if (str_contains($mime, 'image')) {
+                $post->media_type = 'image';
+            } elseif (str_contains($mime, 'video')) {
+                $post->media_type = 'video';
+            } elseif ($file->getClientOriginalExtension() === 'pdf') {
+                $post->media_type = 'pdf';
+            }
         }
 
-        // Simpan media baru
-        $path = $request->file('media')->store('media', 'public');
-        $post->media_path = $path;
+        $post->save();
 
-        // Deteksi jenis media
-        $mime = $request->file('media')->getMimeType();
-        if (str_contains($mime, 'image')) {
-            $post->media_type = 'image';
-        } elseif (str_contains($mime, 'video')) {
-            $post->media_type = 'video';
-        } elseif (str_contains($mime, 'pdf')) {
-            $post->media_type = 'pdf';
-        }
+        return redirect(url()->previous())->with('success', 'Postingan berhasil diperbarui.');
     }
-
-    $post->save();
-
-    return redirect(url()->previous())->with('success', 'Postingan berhasil diperbarui.');
-}
 
     // Hapus postingan + media
     public function destroy(Post $post)
@@ -111,7 +135,12 @@ class PostController extends Controller
         $this->authorize('delete', $post);
 
         if ($post->media_path) {
-            Storage::disk('public')->delete($post->media_path);
+            if ($post->media_path) {
+                Http::withToken(env('SUPABASE_KEY'))
+                    ->delete(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET'), [
+                        'prefixes' => [$post->media_path],
+                    ]);
+            }
         }
 
         $post->delete();

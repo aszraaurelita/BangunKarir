@@ -26,7 +26,7 @@
                         @if($profile && ($profile->photo || Auth::user()->avatar))
                         <div class="mb-3 text-center">
                             @if($profile->photo)
-                                <img src="{{ asset('storage/' . $profile->photo) }}" 
+                                <img src="{{ env('SUPABASE_PUBLIC') . $profile->photo }}" 
                                      alt="Foto Profil Saat Ini" class="profile-photo mb-2">
                             @else
                                 <img src="{{ Auth::user()->avatar }}" 

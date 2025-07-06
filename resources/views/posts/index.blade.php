@@ -18,11 +18,11 @@
                 @if ($post->media_path)
                     <div class="mt-3">
                         @if ($post->media_type === 'image')
-                            <img src="{{ asset('storage/' . $post->media_path) }}" class="img-fluid rounded">
+                            <img src="{{ env('SUPABASE_PUBLIC') . $post->media_path }}" class="img-fluid rounded">
                         
                         @elseif ($post->media_type === 'video')
                             <video controls class="w-100 rounded">
-                                <source src="{{ asset('storage/' . $post->media_path) }}">
+                                <source src="{{ env('SUPABASE_PUBLIC') . $post->media_path }}">
                             </video>
                         
                         @elseif ($post->media_type === 'pdf')
@@ -39,7 +39,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                         </div>
                                         <div class="modal-body" style="height: 80vh;">
-                                            <iframe src="{{ asset('storage/' . $post->media_path) }}" width="100%" height="100%" style="border: none;"></iframe>
+                                            <iframe src="{{ env('SUPABASE_PUBLIC') . $post->media_path }}" width="100%" height="100%" style="border: none;"></iframe>
                                         </div>
                                     </div>
                                 </div>

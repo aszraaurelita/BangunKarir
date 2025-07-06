@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use App\Models\{
     OrganizationalExperience,
     Project,
@@ -178,8 +179,18 @@ class ProfileExtensionController extends Controller
             ];
 
             if ($request->hasFile('file_sertifikat')) {
-                $filePath = $request->file('file_sertifikat')->store('certificates', 'public');
-                $data['file_sertifikat'] = $filePath;
+                $file = $request->file('file_sertifikat');
+                $filename = 'certificates/' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+                $upload = Http::withToken(env('SUPABASE_KEY'))
+                    ->attach('file', file_get_contents($file), $filename)
+                    ->post(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $filename);
+
+                if (!$upload->successful()) {
+                    return back()->withErrors(['error' => 'Upload ke Supabase gagal: ' . $upload->body()]);
+                }
+
+                $data['file_sertifikat'] = $filename;
             }
 
             Certificate::create($data);
@@ -234,8 +245,18 @@ class ProfileExtensionController extends Controller
             ];
 
             if ($request->hasFile('file_portfolio')) {
-                $filePath = $request->file('file_portfolio')->store('portfolios', 'public');
-                $data['file_path'] = $filePath;
+                $file = $request->file('file_portfolio');
+                $filename = 'portfolios/' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+                $upload = Http::withToken(env('SUPABASE_KEY'))
+                    ->attach('file', file_get_contents($file), $filename)
+                    ->post(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $filename);
+
+                if (!$upload->successful()) {
+                    return back()->withErrors(['error' => 'Upload ke Supabase gagal: ' . $upload->body()]);
+                }
+
+                $data['file_path'] = $filename;
             }
 
             Portfolio::create($data);
@@ -297,7 +318,10 @@ class ProfileExtensionController extends Controller
         try {
             $cert = Certificate::where('user_id', Auth::id())->findOrFail($id);
             if ($cert->file_sertifikat) {
-                Storage::disk('public')->delete($cert->file_sertifikat);
+                Http::withToken(env('SUPABASE_KEY'))
+                    ->delete(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET'), [
+                        'prefixes' => [$cert->file_sertifikat],
+                    ]);
             }
             $cert->delete();
             return back()->with('success', 'Sertifikat berhasil dihapus!');
@@ -322,8 +346,12 @@ class ProfileExtensionController extends Controller
         try {
             $portfolio = Portfolio::where('user_id', Auth::id())->findOrFail($id);
             if ($portfolio->file_path) {
-                Storage::disk('public')->delete($portfolio->file_path);
+                Http::withToken(env('SUPABASE_KEY'))
+                    ->delete(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET'), [
+                        'prefixes' => [$portfolio->file_path],
+                    ]);
             }
+
             $portfolio->delete();
             return back()->with('success', 'Portfolio berhasil dihapus!');
         } catch (\Exception $e) {

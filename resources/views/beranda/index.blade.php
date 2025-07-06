@@ -95,7 +95,7 @@
 
                             <div class="d-flex justify-content-center mb-2">
                                 @if ($user->profile?->photo)
-                                    <img src="{{ asset('storage/' . $user->profile->photo) }}" 
+                                    <img src="{{ $user->profile->photo }}" 
                                         class="rounded-circle" 
                                         width="60" height="60" 
                                         style="object-fit: cover; aspect-ratio: 1/1;">
@@ -128,7 +128,7 @@
                     <div class="d-flex align-items-center mb-2">
                         <div class="me-2 rounded-circle overflow-hidden d-flex justify-content-center align-items-center" style="width: 48px; height: 48px; background-color: #e9ecef;">
                             @if ($post->user->profile?->photo)
-                                <img src="{{ asset('storage/' . $post->user->profile->photo) }}" alt="Foto Profil" class="w-100 h-100" style="object-fit: cover;">
+                                <img src="{{ $user->profile->photo }}" alt="Foto Profil" class="w-100 h-100" style="object-fit: cover;">
                             @else
                                 <i class="bi bi-person-circle text-secondary" style="font-size: 24px;"></i>
                             @endif
@@ -148,7 +148,7 @@
                     @if ($post->media_path)
                         <div class="mt-3">
                             @if ($post->media_type === 'image')
-                            <img src="{{ asset('storage/' . $post->media_path) }}"
+                            <img src="{{ $post->media_path }}"
                                 class="img-fluid rounded d-block mx-auto"
                                 style="max-width: 300px;"
                                 onerror="this.onerror=null;this.src='{{ asset('images/placeholder.png') }}';"
@@ -156,7 +156,7 @@
                             
                             @elseif ($post->media_type === 'video')
                                 <video controls class="w-100 rounded">
-                                    <source src="{{ asset('storage/' . $post->media_path) }}">
+                                    <source src="{{ $post->media_path }}">
                                 </video>
                             
                             @elseif ($post->media_type === 'pdf')
@@ -173,7 +173,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                             </div>
                                             <div class="modal-body" style="height: 80vh;">
-                                                <iframe src="{{ asset('storage/' . $post->media_path) }}" width="100%" height="100%" style="border: none;"></iframe>
+                                                <iframe src="{{ $post->media_path }}" width="100%" height="100%" style="border: none;"></iframe>
                                             </div>
                                         </div>
                                     </div>

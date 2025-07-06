@@ -21,14 +21,13 @@
             <label class="form-label">Media Saat Ini</label>
             <div class="border p-2 rounded mb-2">
                 @if ($post->media_type === 'image')
-                    <img src="{{ asset('storage/' . $post->media_path) }}" class="img-fluid rounded">
+                    <img src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}" class="img-fluid rounded">
                 @elseif ($post->media_type === 'video')
                     <video controls class="w-100">
-                        <source src="{{ asset('storage/' . $post->media_path) }}">
-                        Browser Anda tidak mendukung pemutaran video.
+                        <source src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}">
                     </video>
                 @elseif ($post->media_type === 'pdf')
-                    <iframe src="{{ asset('storage/' . $post->media_path) }}" width="100%" height="400px"></iframe>
+                    <iframe src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}" width="100%" height="400px"></iframe>
                 @else
                     <p class="text-muted">Format media tidak dikenali.</p>
                 @endif

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Http;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -166,11 +167,6 @@ class ProfileController extends Controller
     {
         $request->validate([
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'photo.required' => 'Foto wajib dipilih.',
-            'photo.image' => 'File harus berupa gambar.',
-            'photo.mimes' => 'Format foto harus jpeg, png, jpg, atau gif.',
-            'photo.max' => 'Ukuran foto maksimal 2MB.',
         ]);
 
         try {
@@ -181,20 +177,30 @@ class ProfileController extends Controller
                 return back()->withErrors(['error' => 'Profil tidak ditemukan.']);
             }
 
-            // Delete old photo if exists
-            if ($profile->photo) {
-                Storage::disk('public')->delete($profile->photo);
+            // Ambil file dan nama
+            $file = $request->file('photo');
+            $filename = 'profile-photos/' . uniqid() . '.' . $file->getClientOriginalExtension();
+
+            // Upload ke Supabase Storage
+            $response = Http::withToken(env('SUPABASE_KEY'))
+                ->attach(
+                    'file',                // nama form
+                    file_get_contents($file), 
+                    $filename              // nama file di Supabase
+                )
+                ->post(env('SUPABASE_URL') . '/storage/v1/object/' . env('SUPABASE_BUCKET') . '/' . $filename);
+
+            if (!$response->successful()) {
+                return back()->withErrors(['error' => 'Upload ke Supabase gagal: ' . $response->body()]);
             }
 
-            // Upload new photo
-            $photoPath = $request->file('photo')->store('profile-photos', 'uploads');
-            $profile->update(['photo' => $photoPath]);
+            // Simpan path-nya ke database (cukup nama file)
+            $profile->update(['photo' => $filename]);
 
             return back()->with('success', 'Foto profil berhasil diperbarui!');
 
         } catch (\Exception $e) {
-            return back()->withErrors(['error' => 'Terjadi kesalahan saat mengupload foto.']);
+            return back()->withErrors(['error' => 'Terjadi kesalahan: ' . $e->getMessage()]);
         }
     }
-    
 }

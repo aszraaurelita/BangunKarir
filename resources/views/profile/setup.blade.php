@@ -56,7 +56,7 @@
                             <label for="photo" class="form-label">Foto Profil</label>
                             @if($profile && $profile->photo)
                                 <div class="mb-2">
-                                    <img src="{{ asset('storage/' . $profile->photo) }}" 
+                                    <img src="{{ env('SUPABASE_PUBLIC') . $profile->photo }}" 
                                          alt="Foto Profil Saat Ini" class="profile-photo" style="width: 100px; height: 100px;">
                                     <p class="text-muted mt-1">Foto profil saat ini</p>
                                 </div>
