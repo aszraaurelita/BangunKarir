@@ -184,9 +184,8 @@
                     BangunKarir adalah platform inovatif yang dirancang khusus untuk mahasiswa UISI. Kami berkomitmen untuk membantu mahasiswa dalam membangun personal branding yang kuat, mengakses peluang karier yang relevan, dan terhubung dengan perusahaan-perusahaan terkemuka. Dengan fitur-fitur canggih dan dukungan dari mentor berpengalaman, kami siap membantu mahasiswa mencapai impian karier mereka.
                 </p>
             </div>
-        </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-6">
                 <!-- Card Visi -->
                 <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-orange-100 hover:border-orange-300">
                     <div class="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -204,7 +203,7 @@
                         <i class="fas fa-bullseye text-3xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
-                    <ul class="text-gray-700">
+                    <ul class="text-gray-700 text-left md:text-center inline-block mx-auto space-y-2">
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Membangun personal branding</li>
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Magang & kerja dengan perusahaan</li>
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Mentor berpengalaman</li>
@@ -214,6 +213,7 @@
             </div>
         </div>
     </section>
+
 
     {{-- Why Choose Us --}}
     <section class="py-20 bg-white">
