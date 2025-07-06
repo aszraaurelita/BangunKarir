@@ -466,6 +466,21 @@
                 </div>
                 </div>
             </div>
+            <!-- Testimonial 4 -->
+            <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100">
+                <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    "Awalnya aku ragu, tapi setelah coba BangunKarir, ternyata ini platform yang benar-benar bantu aku berkembang. Sekarang aku punya portofolio yang bikin perusahaan tertarik!"
+                </p>
+                <div class="flex items-center space-x-4">
+                    <div class="w-14 h-14 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AJ</span>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">Andika Julian</div>
+                        <div class="text-red-600 text-sm font-medium">Teknik Logistik '20</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -474,35 +489,62 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl lg:text-5xl font-bold mb-6">Siap Memulai Perjalanan Kariermu?</h2>
             <p class="text-xl mb-8">Bergabunglah dengan BangunKarir dan raih kesuksesan yang kamu impikan!</p>
-            <a href="{{ route('register') }}" class="bg-white text-orange-600 hover:bg-orange-100 px-6 py-3 rounded-lg font-bold transition-all">
+            <a href="{{ route('register') }}" class="bg-white text-orange-600 hover:bg-orange-100 px-6 py-3 rounded-lg font-bold transition-all mt-6 inline-block">
                 Daftar Gratis Sekarang
             </a>
         </div>
     </section>    
 
     {{-- Footer --}}
-    <footer class="bg-gray-800 text-white py-10">
+    <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Alamat:</h3>
-                    <p>Universitas Internasional Semen Indonesia<br>
-                    Kompleks PT. Semen Indonesia (Persero) Tbk.<br>
-                    Jl. Veteran, Gresik Jawa Timur 61122</p>
+            <div class="flex flex-col md:flex-row justify-between gap-12">
+                <!-- Tentang -->
+                <div class="md:w-1/3">
+                    <h3 class="text-lg font-bold mb-4">Tentang BangunKarir</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        BangunKarir adalah platform resmi Universitas Internasional Semen Indonesia (UISI) yang dirancang untuk mempersiapkan mahasiswa menghadapi dunia profesional melalui pengembangan personal branding, koneksi industri, dan showcase portofolio digital.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Kontak:</h3>
-                    <p>Instagram: <a href="https://www.instagram.com/kariruisi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-orange-400" target="_blank">@KarirUISI</a><br>
-                    Telp: (031) 3985482; (031) 3981732 ext. 3662</p>
+
+                <!-- Kontak -->
+                <div class="md:w-1/3">
+                    <h3 class="text-lg font-bold mb-4">Kontak Resmi</h3>
+                    <p class="text-gray-300 text-sm">
+                        📍 Alamat:<br>
+                        Universitas Internasional Semen Indonesia<br>
+                        Kompleks PT. Semen Indonesia (Persero) Tbk.<br>
+                        Jl. Veteran, Gresik, Jawa Timur 61122
+                    </p>
+                    <p class="text-gray-300 text-sm mt-4">
+                        ☎️ Telp: (031) 3985482 / (031) 3981732 ext. 3662
+                    </p>
+                    <p class="text-gray-300 text-sm mt-4">
+                        📧 Email: <a href="mailto:karir@uisi.ac.id" class="text-orange-400 hover:underline">karir@uisi.ac.id</a>
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">Website:</h3>
-                    <p><a href="https://uisi.ac.id" class="text-orange-400" target="_blank">uisi.ac.id</a></p>
+
+                <!-- Sosial & Website -->
+                <div class="md:w-1/3">
+                    <h3 class="text-lg font-bold mb-4">Tautan Terkait</h3>
+                    <p class="text-gray-300 text-sm mb-2">
+                        🌐 Website Resmi UISI:<br>
+                        <a href="https://uisi.ac.id" class="text-orange-400 hover:underline" target="_blank">uisi.ac.id</a>
+                    </p>
+                    <p class="text-gray-300 text-sm mb-2">
+                        📱 Instagram Resmi Karir:<br>
+                        <a href="https://www.instagram.com/kariruisi" class="text-orange-400 hover:underline" target="_blank">@KarirUISI</a>
+                    </p>
                 </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+                &copy; {{ date('Y') }} BangunKarir - Universitas Internasional Semen Indonesia. All rights reserved.
             </div>
         </div>
     </footer>
 </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("menu-toggle").addEventListener("click", function () {
@@ -512,5 +554,6 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
