@@ -204,7 +204,7 @@
                         <i class="fas fa-bullseye text-3xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
-                    <ul class="text-gray-700 text-left list-disc list-inside space-y-2">
+                    <ul class="text-gray-700 list-disc list-inside space-y-2 mx-auto text-center w-fit">
                         <li>Membantu mahasiswa membangun personal branding yang profesional</li>
                         <li>Menghubungkan mahasiswa dengan dunia industri melalui peluang magang & kerja</li>
                         <li>Menyediakan akses bimbingan dari mentor berpengalaman</li>
@@ -387,8 +387,8 @@
                 <p class="text-xl text-gray-600">Dengar langsung dari mahasiswa yang telah merasakan keajaiban BangunKarir</p>
             </div>
 
-            <div class="relative overflow-x-auto scrollbar-hide -mx-4 px-4">
-                <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
+            <div class="relative">
+                <div id="testimonial-slider" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {{-- Testimonial 1 --}}
                     <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
@@ -409,7 +409,7 @@
                     </div>
 
                     {{-- Testimonial 2 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -428,7 +428,7 @@
                     </div>
 
                     {{-- Testimonial 3 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -447,7 +447,7 @@
                     </div>
 
                     {{-- Testimonial 4 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -466,7 +466,7 @@
                     </div>
 
                     {{-- Testimonial 5 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -485,7 +485,7 @@
                     </div>
 
                     {{-- Testimonial 6 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -504,7 +504,7 @@
                     </div>
 
                     {{-- Testimonial 7 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -523,7 +523,7 @@
                     </div>
 
                     {{-- Testimonial 8 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class=px-4">
                         <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -542,7 +542,7 @@
                     </div>
 
                     {{-- Testimonial 9 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
+                    <div class="px-4">
                         <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
                             <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
                             <p class="text-gray-700 mb-6 text-lg leading-relaxed">
@@ -563,8 +563,6 @@
             </div>
         </div>
     </section>
-
-    
 
     {{-- Footer --}}
     <footer class="bg-gray-800 text-white py-10">
