@@ -198,8 +198,8 @@
                 </div>
 
                 <!-- Card Misi -->
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-orange-100 hover:border-orange-300">
-                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mb-6">
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-left border-2 border-orange-100 hover:border-orange-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-bullseye text-3xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
