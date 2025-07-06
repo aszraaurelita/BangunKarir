@@ -176,7 +176,7 @@
     </section>
 
     {{-- About Section --}}
-    <section id="tentang" class="py-20 bg-white scroll-mt-20">
+    <section id="tentang" class="py-20 scroll-mt-20" style="background-color: #FFE5D9;">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Tentang BangunKarir</h2>
