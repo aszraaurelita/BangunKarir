@@ -198,16 +198,31 @@
                 </div>
 
                 <!-- Card Misi -->
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-orange-100 hover:border-orange-300">
-                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-left border-2 border-orange-100 hover:border-orange-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-bullseye text-3xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
-                    <ul class="text-gray-700 text-left md:text-center inline-block mx-auto space-y-2">
-                        <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Membangun personal branding</li>
-                        <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Magang & kerja dengan perusahaan</li>
-                        <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Mentor berpengalaman</li>
-                        <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Fasilitasi eksplorasi karier</li>
+                    <p class="text-gray-600 mb-6">
+                        Kami memiliki misi untuk membentuk mahasiswa yang siap berdaya saing tinggi melalui:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-600">
+                            <i class="fas fa-check-circle text-orange-500 mr-3 mt-1"></i>
+                            Membangun personal branding yang kuat dan berkesan
+                        </li>
+                        <li class="flex items-start text-gray-600">
+                            <i class="fas fa-check-circle text-orange-500 mr-3 mt-1"></i>
+                            Menyediakan akses magang dan kerja sama dengan perusahaan terpercaya
+                        </li>
+                        <li class="flex items-start text-gray-600">
+                            <i class="fas fa-check-circle text-orange-500 mr-3 mt-1"></i>
+                            Memberikan bimbingan dari mentor berpengalaman
+                        </li>
+                        <li class="flex items-start text-gray-600">
+                            <i class="fas fa-check-circle text-orange-500 mr-3 mt-1"></i>
+                            Membuka ruang eksplorasi karier sesuai minat dan potensi
+                        </li>
                     </ul>
                 </div>
             </div>
