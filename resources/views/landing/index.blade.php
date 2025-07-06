@@ -496,50 +496,42 @@
     </section>    
 
     {{-- Footer --}}
-    <footer class="bg-gray-800 text-white py-12 mt-20">
+    <footer class="bg-gray-800 text-white pt-16 pb-8 mt-20">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between gap-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
                 <!-- Tentang -->
-                <div class="md:w-1/3">
+                <div>
                     <h3 class="text-lg font-bold mb-4">Tentang BangunKarir</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        BangunKarir adalah platform resmi Universitas Internasional Semen Indonesia (UISI) yang dirancang untuk mempersiapkan mahasiswa menghadapi dunia profesional melalui pengembangan personal branding, koneksi industri, dan showcase portofolio digital.
+                    <p class="text-sm leading-relaxed text-gray-300">
+                        BangunKarir adalah platform resmi Universitas Internasional Semen Indonesia (UISI) 
+                        yang dirancang untuk mempersiapkan mahasiswa menghadapi dunia profesional melalui 
+                        pengembangan personal branding, koneksi industri, dan showcase portofolio digital.
                     </p>
                 </div>
 
                 <!-- Kontak -->
-                <div class="md:w-1/3">
+                <div>
                     <h3 class="text-lg font-bold mb-4">Kontak Resmi</h3>
-                    <p class="text-gray-300 text-sm">
-                        📍 Alamat:<br>
-                        Universitas Internasional Semen Indonesia<br>
-                        Kompleks PT. Semen Indonesia (Persero) Tbk.<br>
-                        Jl. Veteran, Gresik, Jawa Timur 61122
-                    </p>
-                    <p class="text-gray-300 text-sm mt-4">
-                        ☎️ Telp: (031) 3985482 / (031) 3981732 ext. 3662
-                    </p>
-                    <p class="text-gray-300 text-sm mt-4">
-                        📧 Email: <a href="mailto:karir@uisi.ac.id" class="text-orange-400 hover:underline">karir@uisi.ac.id</a>
-                    </p>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><i class="fas fa-map-marker-alt mr-2 text-red-400"></i>Universitas Internasional Semen Indonesia, Jl. Veteran, Gresik 61122</li>
+                        <li><i class="fas fa-phone mr-2 text-red-400"></i>(031) 3985482 / 3981732 ext. 3662</li>
+                        <li><i class="fas fa-envelope mr-2 text-red-400"></i><a href="mailto:karir@uisi.ac.id" class="hover:underline text-orange-400">karir@uisi.ac.id</a></li>
+                    </ul>
                 </div>
 
-                <!-- Sosial & Website -->
-                <div class="md:w-1/3">
+                <!-- Tautan -->
+                <div>
                     <h3 class="text-lg font-bold mb-4">Tautan Terkait</h3>
-                    <p class="text-gray-300 text-sm mb-2">
-                        🌐 Website Resmi UISI:<br>
-                        <a href="https://uisi.ac.id" class="text-orange-400 hover:underline" target="_blank">uisi.ac.id</a>
-                    </p>
-                    <p class="text-gray-300 text-sm mb-2">
-                        📱 Instagram Resmi Karir:<br>
-                        <a href="https://www.instagram.com/kariruisi" class="text-orange-400 hover:underline" target="_blank">@KarirUISI</a>
-                    </p>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li><i class="fas fa-globe mr-2 text-red-400"></i><a href="https://uisi.ac.id" class="hover:underline text-orange-400">uisi.ac.id</a></li>
+                        <li><i class="fab fa-instagram mr-2 text-red-400"></i><a href="https://www.instagram.com/kariruisi" class="hover:underline text-orange-400">@KarirUISI</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-                &copy; {{ date('Y') }} BangunKarir - Universitas Internasional Semen Indonesia. All rights reserved.
+            <!-- Copyright -->
+            <div class="text-center text-xs text-gray-500">
+                © 2025 <strong>BangunKarir</strong> – Universitas Internasional Semen Indonesia. All rights reserved.
             </div>
         </div>
     </footer>
