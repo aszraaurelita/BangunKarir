@@ -185,6 +185,34 @@
                 </p>
             </div>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Card Visi -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-orange-100 hover:border-orange-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Visi</h3>
+                    <p class="text-gray-700">
+                        Menjadi platform terpercaya dalam membentuk generasi profesional yang siap bersaing di dunia kerja melalui pengembangan diri dan koneksi industri.
+                    </p>
+                </div>
+
+                <!-- Card Misi -->
+                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 text-center border-2 border-orange-100 hover:border-orange-300">
+                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
+                    <ul class="text-gray-700 text-left list-disc list-inside space-y-2">
+                        <li>Membantu mahasiswa membangun personal branding yang profesional</li>
+                        <li>Menghubungkan mahasiswa dengan dunia industri melalui peluang magang & kerja</li>
+                        <li>Menyediakan akses bimbingan dari mentor berpengalaman</li>
+                        <li>Memberikan fasilitas eksplorasi karier yang sesuai dengan minat dan potensi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     {{-- Why Choose Us --}}
