@@ -75,6 +75,19 @@
             border-color: var(--primary-orange);
             box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
         }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none !important;
+        }
+
+        a:active {
+            text-decoration: underline !important; /* kalau mau muncul saat diklik, kalau gak mau ya hapus aja */
+        }
     </style>
 </head>
 <body>
