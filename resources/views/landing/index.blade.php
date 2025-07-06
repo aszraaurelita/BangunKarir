@@ -398,188 +398,74 @@
     <section id="testimoni" class="py-20 bg-white scroll-mt-20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Kisah Sukses yang Menginspirasi</h2>
-                <p class="text-xl text-gray-600">Dengar langsung dari mahasiswa yang telah merasakan keajaiban BangunKarir</p>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Kisah Sukses yang Menginspirasi</h2>
+            <p class="text-xl text-gray-600">Dengar langsung dari mahasiswa yang telah merasakan keajaiban BangunKarir</p>
             </div>
 
-            <div class="overflow-x-auto">
-                <div class="flex flex-nowrap gap-6 px-2 md:px-6">
-                    {{-- Testimonial 1 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "BangunKarir benar-benar mengubah hidupku! Dalam 3 bulan, aku berhasil dapat magang di startup unicorn. Profilku yang keren di sini jadi daya tarik utama!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">SB</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Salsabila Putri</div>
-                                    <div class="text-orange-600 text-sm font-medium">Sistem Informasi '22</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 2 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "Dengan BangunKarir, aku mendapatkan kesempatan untuk berkolaborasi dengan perusahaan besar. Ini adalah langkah awal yang luar biasa untuk karierku!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">AR</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Aldo Rinaldi</div>
-                                    <div class="text-red-600 text-sm font-medium">Teknik Informatika '23</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 3 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "BangunKarir membantuku menemukan peluang yang tidak pernah aku bayangkan sebelumnya. Sangat membantu!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">DA</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Diana Ayu</div>
-                                    <div class="text-orange-600 text-sm font-medium">Manajemen '21</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 4 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "Aku mendapatkan mentor yang luar biasa melalui BangunKarir. Ini sangat berharga untuk pengembangan diriku!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">RF</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Rizky Fajar</div>
-                                    <div class="text-red-600 text-sm font-medium">Akuntansi '20</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 5 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "BangunKarir memberiku akses ke banyak peluang kerja yang sesuai dengan minat dan bakatku."
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">MS</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Mira Sari</div>
-                                    <div class="text-orange-600 text-sm font-medium">Desain Komunikasi Visual '22</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 6 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "Pengalaman yang luar biasa! Aku berhasil mendapatkan pekerjaan impian berkat BangunKarir."
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">FA</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Fajar Alamsyah</div>
-                                    <div class="text-red-600 text-sm font-medium">Teknik Sipil '19</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 7 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "BangunKarir sangat membantu dalam membangun jaringan profesional yang kuat."
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">NA</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Nadia Ayu</div>
-                                    <div class="text-orange-600 text-sm font-medium">Ilmu Komputer '21</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 8 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "Aku sangat merekomendasikan BangunKarir kepada teman-teman. Ini adalah platform yang sangat bermanfaat!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">RA</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Rina Anisa</div>
-                                    <div class="text-red-600 text-sm font-medium">Manajemen '20</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Testimonial 9 --}}
-                    <div class="w-80 md:w-1/3 flex-shrink-0 px-4">
-                        <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100 h-full">
-                            <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
-                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
-                                "BangunKarir adalah jembatan menuju kesuksesan. Aku sangat bersyukur bisa bergabung!"
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-14 h-14 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full flex items-center justify-center">
-                                    <span class="text-white font-bold text-lg">ZA</span>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900">Zainal Abidin</div>
-                                    <div class="text-orange-600 text-sm font-medium">Teknik Mesin '22</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Testimonial 1 -->
+            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100">
+                <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                "BangunKarir benar-benar mengubah hidupku! Dalam 3 bulan, aku berhasil dapat magang di startup unicorn. Profilku yang keren di sini jadi daya tarik utama!"
+                </p>
+                <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">SB</span>
                 </div>
+                <div>
+                    <div class="font-bold text-gray-900">Salsabila Putri</div>
+                    <div class="text-orange-600 text-sm font-medium">Sistem Informasi '22</div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-gradient-to-br from-red-50 to-white rounded-2xl shadow-xl p-8 border-2 border-red-100">
+                <i class="fas fa-quote-left text-3xl text-red-500 mb-6"></i>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                "Dengan BangunKarir, aku mendapatkan kesempatan untuk berkolaborasi dengan perusahaan besar. Ini adalah langkah awal yang luar biasa untuk karierku!"
+                </p>
+                <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">AR</span>
+                </div>
+                <div>
+                    <div class="font-bold text-gray-900">Aldo Rinaldi</div>
+                    <div class="text-red-600 text-sm font-medium">Teknik Informatika '23</div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-xl p-8 border-2 border-orange-100">
+                <i class="fas fa-quote-left text-3xl text-orange-500 mb-6"></i>
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                "BangunKarir membantuku menemukan peluang yang tidak pernah aku bayangkan sebelumnya. Sangat membantu!"
+                </p>
+                <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">DA</span>
+                </div>
+                <div>
+                    <div class="font-bold text-gray-900">Diana Ayu</div>
+                    <div class="text-orange-600 text-sm font-medium">Manajemen '21</div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
-
-    
+    {{-- Call to Action --}}
+    <section class="py-20 bg-gradient-to-r from-orange-500 to-red-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Siap Memulai Perjalanan Kariermu?</h2>
+            <p class="text-xl mb-8">Bergabunglah dengan BangunKarir dan raih kesuksesan yang kamu impikan!</p>
+            <a href="{{ route('register') }}" class="bg-white text-orange-600 hover:bg-orange-100 px-6 py-3 rounded-lg font-bold transition-all">
+                Daftar Gratis Sekarang
+            </a>
+        </div>
+    </section>    
 
     {{-- Footer --}}
     <footer class="bg-gray-800 text-white py-10">
