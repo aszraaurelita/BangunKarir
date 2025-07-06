@@ -496,7 +496,7 @@
     </section>    
 
     {{-- Footer --}}
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 text-white py-12 mt-20">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between gap-12">
                 <!-- Tentang -->
@@ -554,6 +554,6 @@
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
 </html>
