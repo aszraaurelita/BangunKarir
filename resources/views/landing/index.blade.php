@@ -497,10 +497,10 @@
     <div class="pt-20"></div>
     {{-- Footer --}}
     <footer class="bg-gray-800 text-white py-12 mt-20">
-        <div class="container mx-auto px-8 md:px-8">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
             <div class="flex flex-col md:flex-row justify-between gap-12">
                 <!-- Tentang -->
-                <div class="md:w-1/3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <h3 class="text-lg font-bold mb-4">Tentang BangunKarir</h3>
                     <p class="text-gray-300 text-sm leading-relaxed">
                         BangunKarir adalah platform resmi Universitas Internasional Semen Indonesia (UISI) yang dirancang untuk mempersiapkan mahasiswa menghadapi dunia profesional melalui pengembangan personal branding, koneksi industri, dan showcase portofolio digital.
@@ -508,7 +508,7 @@
                 </div>
 
                 <!-- Kontak -->
-                <div class="md:w-1/3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <h3 class="text-lg font-bold mb-4">Kontak Resmi</h3>
                     <p class="text-gray-300 text-sm">
                         📍 Alamat:<br>
@@ -525,7 +525,7 @@
                 </div>
 
                 <!-- Sosial & Website -->
-                <div class="md:w-1/3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <h3 class="text-lg font-bold mb-4">Tautan Terkait</h3>
                     <p class="text-gray-300 text-sm mb-2">
                         🌐 Website Resmi UISI:<br>
