@@ -204,7 +204,7 @@
                         <i class="fas fa-bullseye text-3xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Misi</h3>
-                    <ul class="text-gray-700 list-disc list-inside space-y-2 mx-auto text-center w-fit">
+                    <ul class="text-gray-700">
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Membangun personal branding</li>
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Magang & kerja dengan perusahaan</li>
                         <li><i class="fas fa-check-circle text-orange-500 mr-2"></i>Mentor berpengalaman</li>
