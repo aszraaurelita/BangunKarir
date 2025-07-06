@@ -497,7 +497,7 @@
     <div class="pt-20"></div>
     {{-- Footer --}}
     <footer class="bg-gray-800 text-white py-12 mt-20">
-        <div class="container mx-auto px-6 md:px-8">
+        <div class="container mx-auto px-8 md:px-8">
             <div class="flex flex-col md:flex-row justify-between gap-12">
                 <!-- Tentang -->
                 <div class="md:w-1/3">
