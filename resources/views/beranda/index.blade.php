@@ -92,7 +92,7 @@
                             @php
                                 $userId = $user->id ?? null;
                                 $photoUrl = $user->profile?->photo 
-                                    ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $user->profile->photo
+                                    ? env('SUPABASE_PUBLIC') . $user->profile->photo
                                     : null;
                             @endphp
 
@@ -130,7 +130,7 @@
                     {{-- Header: Foto Profil & Nama --}}
                     @php
                         $profilePhotoUrl = $post->user->profile?->photo
-                            ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->user->profile->photo
+                            ? env('SUPABASE_PUBLIC') . $post->user->profile->photo
                             : null;
                     @endphp
                     {{-- Foto Profil --}}
@@ -158,7 +158,7 @@
 
                     {{-- Media --}}
                     @php
-                        $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                        $mediaUrl = env('SUPABASE_PUBLIC') . $post->media_path;
                     @endphp
                     @if ($post->media_path)
                         <div class="mt-3">

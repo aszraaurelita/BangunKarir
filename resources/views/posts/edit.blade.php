@@ -21,7 +21,7 @@
             <label class="form-label">Media Saat Ini</label>
             <div class="border p-2 rounded mb-2">
             @php
-                $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                $mediaUrl = env('SUPABASE_PUBLIC') . $post->media_path;
             @endphp
                 @if ($post->media_type === 'image')
                     <img src="{{ $mediaUrl }}" class="img-fluid rounded">

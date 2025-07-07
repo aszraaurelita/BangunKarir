@@ -16,7 +16,7 @@
 
                 {{-- Media --}}
                 @php
-                    $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                    $mediaUrl = env('SUPABASE_PUBLIC') . $post->media_path;
                 @endphp
 
                 @if ($post->media_path)

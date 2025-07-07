@@ -8,7 +8,7 @@
     <div class="card mb-3">
         <div class="card-body">
             @php
-                $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                $mediaUrl = env('SUPABASE_PUBLIC') . $post->media_path;
             @endphp
             <strong>{{ $post->user->name }}</strong>
             <p>{{ $post->caption }}</p>

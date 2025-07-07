@@ -25,7 +25,7 @@
                         <!-- Current Photo -->
                         @php
                             $photoUrl = $profile->photo 
-                                ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $profile->photo
+                                ? env('SUPABASE_PUBLIC') . $profile->photo
                                 : Auth::user()->avatar;
                         @endphp
                         @if($profile && ($profile->photo || Auth::user()->avatar))

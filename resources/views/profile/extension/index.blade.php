@@ -284,7 +284,7 @@
 
                 @if ($post->media_path)
                     @php
-                        $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                        $mediaUrl = env('SUPABASE_PUBLIC') . $post->media_path;
                     @endphp
                     <div class="mt-2">
                         @if ($post->media_type === 'image')
