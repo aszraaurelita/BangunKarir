@@ -91,11 +91,14 @@
                         <div class="card text-center p-2" style="width: 140px; flex: 0 0 auto;">
                             @php
                                 $userId = $user->id ?? null;
+                                $photoUrl = $user->profile?->photo 
+                                    ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $user->profile->photo
+                                    : null;
                             @endphp
 
                             <div class="d-flex justify-content-center mb-2">
-                                @if ($user->profile?->photo)
-                                    <img src="{{ $user->profile->photo }}" 
+                                @if ($photoUrl)
+                                    <img src="{{ $photoUrl }}" 
                                         class="rounded-circle" 
                                         width="60" height="60" 
                                         style="object-fit: cover; aspect-ratio: 1/1;">
@@ -125,10 +128,19 @@
                 <div class="card-body">
                     
                     {{-- Header: Foto Profil & Nama --}}
+                    @php
+                        $profilePhotoUrl = $post->user->profile?->photo
+                            ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->user->profile->photo
+                            : null;
+                    @endphp
+                    {{-- Foto Profil --}}
                     <div class="d-flex align-items-center mb-2">
                         <div class="me-2 rounded-circle overflow-hidden d-flex justify-content-center align-items-center" style="width: 48px; height: 48px; background-color: #e9ecef;">
-                            @if ($post->user->profile?->photo)
-                                <img src="{{ $user->profile->photo }}" alt="Foto Profil" class="w-100 h-100" style="object-fit: cover;">
+                            @if ($profilePhotoUrl)
+                                <img src="{{ $profilePhotoUrl }}"
+                                alt="Foto Profil"
+                                class="w-100 h-100"
+                                style="object-fit: cover;">
                             @else
                                 <i class="bi bi-person-circle text-secondary" style="font-size: 24px;"></i>
                             @endif
@@ -145,10 +157,13 @@
                     <p>{{ $post->caption }}</p>
 
                     {{-- Media --}}
+                    @php
+                        $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                    @endphp
                     @if ($post->media_path)
                         <div class="mt-3">
                             @if ($post->media_type === 'image')
-                            <img src="{{ $post->media_path }}"
+                            <img src="{{ $mediaUrl }}"
                                 class="img-fluid rounded d-block mx-auto"
                                 style="max-width: 300px;"
                                 onerror="this.onerror=null;this.src='{{ asset('images/placeholder.png') }}';"
@@ -156,7 +171,7 @@
                             
                             @elseif ($post->media_type === 'video')
                                 <video controls class="w-100 rounded">
-                                    <source src="{{ $post->media_path }}">
+                                    <source src="{{ $mediaUrl }}">
                                 </video>
                             
                             @elseif ($post->media_type === 'pdf')
@@ -173,7 +188,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                             </div>
                                             <div class="modal-body" style="height: 80vh;">
-                                                <iframe src="{{ $post->media_path }}" width="100%" height="100%" style="border: none;"></iframe>
+                                                <iframe src="{{ $mediaUrl }}" width="100%" height="100%" style="border: none;"></iframe>
                                             </div>
                                         </div>
                                     </div>

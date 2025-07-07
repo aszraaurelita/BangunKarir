@@ -269,16 +269,40 @@
 </div>
 
 {{-- Postingan --}}
-<div class="container">
+<div class="container mt-5">
     <h2>{{ $user->name }}</h2>
-    <h4>Postingan:</h4>
+    <h4 class="mb-3">Postingan:</h4>
+
     @forelse ($posts as $post)
-        <div>
-            <strong>{{ $post->user->name }}</strong>
-            <p>{{ $post->caption }}</p>
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <strong>{{ $post->user->name }}</strong>
+                    <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small>
+                </div>
+                <p class="mt-2">{{ $post->caption }}</p>
+
+                @if ($post->media_path)
+                    @php
+                        $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+                    @endphp
+                    <div class="mt-2">
+                        @if ($post->media_type === 'image')
+                            <img src="{{ $mediaUrl }}" class="img-fluid rounded" width="300">
+                        @elseif ($post->media_type === 'video')
+                            <video controls width="300" class="rounded">
+                                <source src="{{ $mediaUrl }}">
+                            </video>
+                        @elseif ($post->media_type === 'pdf')
+                            <a href="{{ $mediaUrl }}" target="_blank" class="btn btn-outline-primary btn-sm">📄 Lihat Dokumen</a>
+                        @endif
+                    </div>
+                @endif
+            </div>
         </div>
     @empty
-        <p>Belum ada postingan.</p>
+        <p class="text-muted">Belum ada postingan.</p>
     @endforelse
 </div>
+
 @endsection 

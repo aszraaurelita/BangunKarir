@@ -7,17 +7,20 @@
 
     <div class="card mb-3">
         <div class="card-body">
+            @php
+                $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+            @endphp
             <strong>{{ $post->user->name }}</strong>
             <p>{{ $post->caption }}</p>
             {{-- Tampilkan media jika ada --}}
             @if ($post->media_path)
                 <div class="mt-3">
                     @if ($post->media_type === 'image')
-                        <img src="{{ $post->media_path }}" class="img-fluid rounded">
+                        <img src="{{ $mediaUrl }}" class="img-fluid rounded">
                     
                     @elseif ($post->media_type === 'video')
                         <video controls class="w-100 rounded">
-                            <source src="{{ $post->media_path }}">
+                            <source src="{{ $mediaUrl }}">
                         </video>
                     
                     @elseif ($post->media_type === 'pdf')
@@ -34,7 +37,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                                     </div>
                                     <div class="modal-body" style="height: 80vh;">
-                                        <iframe src="{{ $post->media_path }}" width="100%" height="100%" style="border: none;"></iframe>
+                                        <iframe src="{{ $mediaUrl }}" width="100%" height="100%" style="border: none;"></iframe>
                                     </div>
                                 </div>
                             </div>

@@ -20,14 +20,17 @@
         <div class="mb-3">
             <label class="form-label">Media Saat Ini</label>
             <div class="border p-2 rounded mb-2">
+            @php
+                $mediaUrl = env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $post->media_path;
+            @endphp
                 @if ($post->media_type === 'image')
-                    <img src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}" class="img-fluid rounded">
+                    <img src="{{ $mediaUrl }}" class="img-fluid rounded">
                 @elseif ($post->media_type === 'video')
                     <video controls class="w-100">
-                        <source src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}">
+                        <source src="{{ $mediaUrl }}">
                     </video>
                 @elseif ($post->media_type === 'pdf')
-                    <iframe src="{{ env('SUPABASE_URL') . '/storage/v1/object/public/' . $post->media_path }}" width="100%" height="400px"></iframe>
+                    <iframe src="{{ $mediaUrl }}" width="100%" height="400px"></iframe>
                 @else
                     <p class="text-muted">Format media tidak dikenali.</p>
                 @endif

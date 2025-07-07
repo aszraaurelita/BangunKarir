@@ -23,10 +23,15 @@
                         @csrf
                         
                         <!-- Current Photo -->
+                        @php
+                            $photoUrl = $profile->photo 
+                                ? env('SUPABASE_URL') . '/storage/v1/object/public/' . env('SUPABASE_BUCKET') . '/' . $profile->photo
+                                : Auth::user()->avatar;
+                        @endphp
                         @if($profile && ($profile->photo || Auth::user()->avatar))
                         <div class="mb-3 text-center">
                             @if($profile->photo)
-                                <img src="{{ env('SUPABASE_PUBLIC') . $profile->photo }}" 
+                                <img src="{{ $photoUrl }}" 
                                      alt="Foto Profil Saat Ini" class="profile-photo mb-2">
                             @else
                                 <img src="{{ Auth::user()->avatar }}" 
@@ -40,6 +45,7 @@
                         <div class="mb-4">
                             <label for="photo" class="form-label">Foto Profil Baru</label>
                             <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                            <img id="preview-photo" class="img-thumbnail mt-2" style="max-width: 200px; display:none;">
                             <small class="text-muted">Kosongkan jika tidak ingin mengubah foto</small>
                         </div>
 
@@ -154,3 +160,15 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+<script>
+    document.getElementById('photo').addEventListener('change', function(event){
+        const [file] = event.target.files;
+        if(file){
+            const preview = document.getElementById('preview-photo');
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        }
+    });
+</script>
+@endpush
